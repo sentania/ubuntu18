@@ -1,0 +1,18 @@
+node () {
+
+deleteDir()
+
+      stage ('Checkout Build Code') {
+         checkout scm
+       }
+        withCredentials([usernamePassword(credentialsId: 'vcenter_admin',
+        usernameVariable: 'vCenterUsername', passwordVariable: 'vCenterPassword')]){
+        stage ('Build Image') {
+        sh '/usr/local/bin/packer.1.6.0 build -only ubuntu18 -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername"-var-file variables.json ubuntu.json'
+        }
+        
+        stage ('Upload Image') {
+        sh '/bin/pwsh deploy-image.ps1 -vsphereUSERNAME $vCenterUsername -vspherePassword $vCenterPassword -sourceVM ubuntu18-template'
+        }
+}
+    }

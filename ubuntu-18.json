@@ -2,17 +2,15 @@
     "builders": [
       {
         "type": "vsphere-iso",
-  
+        "name": "ubuntu18",
         "vcenter_server":      "{{user `vcenter_server`}}",
         "username":            "{{user `username`}}",
         "password":            "{{user `password`}}",
         "insecure_connection": "true",
   
-        "vm_name": "template_ubuntu18test",
+        "vm_name": "ubuntu18-template",
         "datastore": "{{user `datastore`}}",
         "folder": "{{user `folder`}}",
-        "host":     "{{user `host`}}",
-        "convert_to_template": "true",
         "cluster": "{{user `cluster`}}",
         "network": "{{user `network`}}",
         "boot_order": "disk,cdrom",
@@ -22,7 +20,7 @@
         "ssh_username": "{{user `ssh_username`}}",
         "ssh_password": "{{user `ssh_password`}}",
   
-        "CPUs":             2,
+        "CPUs":             1,
         "RAM":              2048,
         "RAM_reserve_all": true,
   
