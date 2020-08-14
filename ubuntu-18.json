@@ -12,7 +12,6 @@
         "datastore": "{{user `datastore`}}",
         "folder": "{{user `folder`}}",
         "cluster": "{{user `cluster`}}",
-        "network": "{{user `network`}}",
         "boot_order": "disk,cdrom",
   
         "guest_os_type": "ubuntu64Guest",
@@ -25,10 +24,19 @@
         "RAM_reserve_all": true,
   
         "disk_controller_type":  "pvscsi",
-        "disk_size":        32768,
-        "disk_thin_provisioned": true,
+        "storage": [
+          {
+            "disk_size": 71680,
+            "disk_thin_provisioned": true
+          }
+        ],
   
-        "network_card": "vmxnet3",
+        "network_adapters": [
+          {
+            "network": "{{user `network`}}",
+            "network_card": "vmxnet3"
+          }
+        ],
   
         "iso_urls": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.2-server-amd64.iso",
         "iso_checksum": "a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
