@@ -39,7 +39,7 @@
         ],
   
         "iso_urls": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.5-server-amd64.iso",
-        "iso_checksum": "sha256:a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
+        "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
 
         "floppy_files": [
           "./preseed.cfg"
