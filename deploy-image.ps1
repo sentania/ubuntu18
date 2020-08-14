@@ -207,6 +207,8 @@ $sourceVMobj = get-vm -Name $sourceVM
 
 Export-VM -Destination /tmp/ -Format Ova -VM $sourceVMobj -Name ubuntu18
 
+$sourveVMObj | remove-vm -deletePermantly -server $vCConnection -confirm:$false
+
 Disconnect-VIServer -Server $vCConnection -Confirm:$false
 
 $cisServerConnection = Connect-CisServer -Server vcenter.int.sentania.net -User $vSphereUSERNAME -Password $vSpherePASSWORD
