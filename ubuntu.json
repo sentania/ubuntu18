@@ -7,10 +7,6 @@
         "username":            "{{user `username`}}",
         "password":            "{{user `password`}}",
         "insecure_connection": "true",
-        "export": {
-          "force": true,
-          "output_directory": "./output_vsphere"
-        },
         "content_library_destination" : {
           "library": "vcenter.int.sentania.net",
           "ovf": true,
