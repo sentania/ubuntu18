@@ -2,7 +2,7 @@
     "builders": [
       {
         "type": "vsphere-iso",
-        "name": "ubuntu18",
+        "name": "ubuntu18-dhcp",
         "vcenter_server":      "{{user `vcenter_server`}}",
         "username":            "{{user `username`}}",
         "password":            "{{user `password`}}",
@@ -11,7 +11,12 @@
           "force": true,
           "output_directory": "./output_vsphere"
         },
-        "vm_name": "ubuntu18-template",
+        "content_library_destination" : {
+          "library": "vcenter.int.sentania.net",
+          "ovf": true,
+          "name" : "ubuntu18-dhcp"
+      },
+        "vm_name": "ubuntu18-dhcp",
         "datastore": "{{user `datastore`}}",
         "folder": "{{user `folder`}}",
         "cluster": "{{user `cluster`}}",
