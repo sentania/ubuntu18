@@ -8,7 +8,7 @@ deleteDir()
         withCredentials([usernamePassword(credentialsId: 'vcenter_admin',
         usernameVariable: 'vCenterUsername', passwordVariable: 'vCenterPassword')]){
         stage ('Build Image') {
-        sh '/usr/local/bin/packer.1.6.3 build -only ubuntu18-dhcp -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername" -var-file variables.json ubuntu.json'
+        sh '/usr/local/bin/packer.1.6.3 build -force -only ubuntu18-dhcp -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername" -var-file variables.json ubuntu.json'
         }
         
 
