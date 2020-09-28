@@ -148,8 +148,24 @@
          "only": "ubuntu18-nsx"
       },
       {
+        "type": "file",
+        "source": "files/disable-cloud-network.cfg",
+        "destination": "/tmp/99-disable-network-config.cfg",
+        "only": "ubuntu18-nsx"
+      },
+      {
+        "type": "shell",
+        "inline": ["sudo rm -rf /etc/netplan/*"],
+        "only": "ubuntu18-nsx"
+      },
+      {
         "type": "shell",
         "inline": ["sudo mv /tmp/50-cloud-init.yaml /etc/netplan/"],
+        "only": "ubuntu18-nsx"
+      },
+      {
+        "type": "shell",
+        "inline": ["sudo mv /tmp/99-disable-network-config.cfg /etc/cloud/cloud.cfg.d/"],
         "only": "ubuntu18-nsx"
      }
     ]
