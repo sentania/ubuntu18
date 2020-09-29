@@ -11,7 +11,7 @@ deleteDir()
         sh '/usr/local/bin/packer.1.6.3 build -force -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername" -var-file variables.json ubuntu.json'
         }
         stage ('Sync Content Library') {
-        sh '/bin/pwsh deploy-image.ps1 -vsphereUSERNAME $vCenterUsername -vspherePassword $vCenterPassword'
+        sh '/bin/pwsh sync-contentlibrary.ps1 -vsphereUSERNAME $vCenterUsername -vspherePassword $vCenterPassword'
         }
 
       }
