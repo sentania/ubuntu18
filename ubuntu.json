@@ -69,7 +69,7 @@
       },
       {
         "type": "vsphere-iso",
-        "name": "ubuntu18-nsx",
+        "name": "ubuntu18-static",
         "vcenter_server":      "{{user `vcenter_server`}}",
         "username":            "{{user `username`}}",
         "password":            "{{user `password`}}",
@@ -77,9 +77,9 @@
         "content_library_destination" : {
           "library": "vcenter.int.sentania.net",
           "ovf": true,
-          "name" : "ubuntu18-nsx"
+          "name" : "ubuntu18-static"
       },
-        "vm_name": "ubuntu18-nsx",
+        "vm_name": "ubuntu18-static",
         "datastore": "{{user `datastore`}}",
         "folder": "{{user `folder`}}",
         "cluster": "{{user `cluster`}}",
@@ -145,28 +145,28 @@
          "type": "file",
          "source": "files/netplan.yml",
          "destination": "/tmp/50-cloud-init.yaml",
-         "only": "ubuntu18-nsx"
+         "only": "ubuntu18-dhcp"
       },
       {
         "type": "file",
         "source": "files/disable-cloud-network.cfg",
         "destination": "/tmp/99-disable-network-config.cfg",
-        "only": "ubuntu18-nsx"
+        "only": "ubuntu18-dhcp"
       },
       {
         "type": "shell",
         "inline": ["sudo rm -rf /etc/netplan/*"],
-        "only": "ubuntu18-nsx"
+        "only": "ubuntu18-dhcp"
       },
       {
         "type": "shell",
         "inline": ["sudo mv /tmp/50-cloud-init.yaml /etc/netplan/"],
-        "only": "ubuntu18-nsx"
+        "only": "ubuntu18-dhcp"
       },
       {
         "type": "shell",
         "inline": ["sudo mv /tmp/99-disable-network-config.cfg /etc/cloud/cloud.cfg.d/"],
-        "only": "ubuntu18-nsx"
+        "only": "ubuntu18-dhcp"
      }
     ]
   }
