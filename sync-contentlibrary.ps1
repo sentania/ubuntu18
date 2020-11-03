@@ -6,7 +6,7 @@
 $vCenterlist = get-content inputs/vcenterlist.txt
 foreach ($vcenter in $vCenterlist)
 {
-$cisServerConnection = Connect-CisServer -Server lab-vcf-w01-vc.lab.sentania.net -User $vSphereUSERNAME -Password $vSpherePASSWORD
+$cisServerConnection = Connect-CisServer -Server $vcenter -User $vSphereUSERNAME -Password $vSpherePASSWORD
 
 $ContentLibraryService = Get-CisService com.vmware.content.library
 $contentlibrarysubscribedService = Get-CisService com.vmware.content.subscribed_library
