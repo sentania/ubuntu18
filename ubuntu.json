@@ -25,7 +25,7 @@
   
         "CPUs":             1,
         "RAM":              2048,
-        "RAM_reserve_all": true,
+        "RAM_reserve_all": false,
   
         "disk_controller_type":  "pvscsi",
         "storage": [
@@ -92,7 +92,7 @@
   
         "CPUs":             1,
         "RAM":              2048,
-        "RAM_reserve_all": true,
+        "RAM_reserve_all": false,
   
         "disk_controller_type":  "pvscsi",
         "storage": [
