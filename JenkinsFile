@@ -13,7 +13,7 @@ deleteDir()
       withCredentials([usernamePassword(credentialsId: 'vcenter_admin',
       usernameVariable: 'vCenterUsername', passwordVariable: 'vCenterPassword')]){
       stage ('Build Image') {
-      sh 'packer build -force -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername" -var-file variables.json ubuntu.json'
+      sh './packer build -force -on-error=abort -var "password=$vCenterPassword" -var "username=$vCenterUsername" -var-file variables.json ubuntu.json'
       }
 
       stage ('Sync Content Library') {
