@@ -8,8 +8,8 @@ network:
         ens192:
             dhcp4: true
             nameservers:
-               search: [lab.sentania.net,int.sentania.net,sentania.net]
-               addresses: [10.100.0.142,10.100.0.5]
+               search: [int.sentania.net,sentania.net]
+               addresses: [172.25.1.8,172.25.1.9]
             match:
                driver: vmxnet3
             set-name: ens192

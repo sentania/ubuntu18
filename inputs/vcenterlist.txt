@@ -1,2 +1,2 @@
-lab-comp02-vcenter.int.sentania.net
-lab-comp01-vcenter.int.sentania.net
+lab-vcf-m01-vc.int.sentania.net
+lab-vcf-w01-vc.int.sentania.net
